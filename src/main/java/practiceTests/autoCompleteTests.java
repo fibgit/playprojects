@@ -30,9 +30,18 @@ public class autoCompleteTests {
         //Find the dropdown button on the page
         WebElement dropDownButton = driver.findElement(By.className("selectButton"));
 
-        //Click the dropdown
+        //Click the dropdown button on the page
         dropDownButton.click();
         Thread.sleep(3000);
+
+        //Select Web Hosting Account from the Drop down list
+        WebElement AccountMangerDropDown = driver.findElement(By.xpath("//a[text()=\"Web Hosting Account\"]"));
+
+        // Click the Web hosting account from the drop down list
+        AccountMangerDropDown.click();
+        Thread.sleep(7999);
+
+
 
         driver.close();
     }
