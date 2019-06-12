@@ -13,7 +13,7 @@ public class practiceTesting {
         // Instantiate drivers
         ChromeDriver driver = new ChromeDriver();
 
-
+        //Get to the test page
         driver.get("http://localhost:4567/alert.html");
 
         Thread.sleep(2000);
