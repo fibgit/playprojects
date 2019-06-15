@@ -1,5 +1,6 @@
 package practiceTests;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class practiceTesting {
+
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\boma.fiberesima\\Downloads\\chromedriver\\ChromeDriver.exe");
 
@@ -18,12 +20,17 @@ public class practiceTesting {
 
         Thread.sleep(2000);
 
-        WebElement clickBox = driver.findElement(By.id("alertexamples"));
+        WebElement alertBox = driver.findElement(By.id("alertexamples"));
 
-        clickBox.click();
-
-
+        alertBox.click();
         Thread.sleep(2000);
+
+        Alert alert = driver.switchTo().alert();
+
+        alert.accept();
+        Thread.sleep(2000);
+
+        driver.close();
 
 
     }
