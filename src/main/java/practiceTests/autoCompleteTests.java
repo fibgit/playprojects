@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+
+
 public class autoCompleteTests {
 
 
@@ -40,9 +43,19 @@ public class autoCompleteTests {
 
         // Click the Web hosting account from the drop down list
         AccountMangerDropDown.click();
-        Thread.sleep(7999);
+        Thread.sleep(5000);
 
+        //Scroll down to the bottom of the page and click the "GOT IT" button to consent to the use of site cookies
 
+        WebElement  gotItButton = driver.findElement(By.xpath("//button[@class=\"optanon-allow-all accept-cookies-button\"]"));
+        Thread.sleep(4000);
+
+//        Actions action = new Actions(driver);
+//        action.moveToElement(gotItButton);
+//        Thread.sleep(9999);
+
+        gotItButton.click();
+        Thread.sleep(4000);
 
         driver.close();
     }
