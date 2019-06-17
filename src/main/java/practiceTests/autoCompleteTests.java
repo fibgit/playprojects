@@ -45,18 +45,26 @@ public class autoCompleteTests {
         AccountMangerDropDown.click();
         Thread.sleep(5000);
 
-        //Scroll down to the bottom of the page and click the "GOT IT" button to consent to the use of site cookies
-
+        //Scroll down to the bottom of the page and locate the "GOT IT" button to consent to the use of site cookies
         WebElement  gotItButton = driver.findElement(By.xpath("//button[@class=\"optanon-allow-all accept-cookies-button\"]"));
         Thread.sleep(4000);
 
-//        Actions action = new Actions(driver);
-//        action.moveToElement(gotItButton);
-//        Thread.sleep(9999);
-
+        // click the "GOT IT" button to consent to use site cookies
         gotItButton.click();
         Thread.sleep(4000);
 
+        //locate the "Partner with Register.com" paragraph
+         WebElement paragraph = driver.findElement(By.xpath("//p[text()=\"Partner with Register.com\"]"));
+
+        //Scroll action the page to bring the "Partner with Register.com" paragraph to view
+         Actions action = new Actions(driver);
+        action.moveToElement(paragraph);
+        Thread.sleep(4000);
+
+        //locate affiliate link with paragraph and click on the Affiliate link
+        WebElement affiliate_link = driver.findElement(By.linkText("Become an Affiliate"));
+        affiliate_link.click();
+        Thread.sleep(9999);
         driver.close();
     }
 
