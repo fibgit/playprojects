@@ -64,7 +64,7 @@ public class autoCompleteTests {
         //locate affiliate link with paragraph and click on the Affiliate link
         WebElement affiliate_link = driver.findElement(By.linkText("Become an Affiliate"));
         affiliate_link.click();
-        Thread.sleep(9999);
+        Thread.sleep(4000);
         driver.close();
     }
 
