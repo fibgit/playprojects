@@ -20,6 +20,7 @@ public class autoCompleteTests {
         public void setUp(){
             driver = new ChromeDriver();
             driver.get("https://www.register.com/");
+            driver.manage().window().maximize();
         }
 
         @After
@@ -29,14 +30,6 @@ public class autoCompleteTests {
 
         @Test
          public void testTestsForWebpage() throws InterruptedException {
-//        System.setProperty("webdriver.chrome.driver","C:\\Users\\boma.fiberesima\\Downloads\\chromedriver\\ChromeDriver.exe");
-
-
-        //Navigate to the Login page of the organisation
-        driver.get("https://www.register.com/");
-        driver.manage().window().maximize();
-
-        Thread.sleep(1000);
 
         //Find the login tab on the page
         WebElement clickLoginTab = driver.findElement(By.id("log-in"));
@@ -57,15 +50,15 @@ public class autoCompleteTests {
 
         // Click the Web hosting account from the drop down list
         AccountMangerDropDown.click();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         //Scroll down to the bottom of the page and locate the "GOT IT" button to consent to the use of site cookies
         WebElement  gotItButton = driver.findElement(By.xpath("//button[@class=\"optanon-allow-all accept-cookies-button\"]"));
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         // click the "GOT IT" button to consent to use site cookies
         gotItButton.click();
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         //locate the "Partner with Register.com" paragraph
          WebElement paragraph = driver.findElement(By.xpath("//p[text()=\"Partner with Register.com\"]"));
@@ -73,12 +66,12 @@ public class autoCompleteTests {
         //Scroll action the page to bring the "Partner with Register.com" paragraph to view
          Actions action = new Actions(driver);
         action.moveToElement(paragraph);
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         //locate affiliate link with paragraph and click on the Affiliate link
         WebElement affiliate_link = driver.findElement(By.linkText("Become an Affiliate"));
         affiliate_link.click();
-        Thread.sleep(4000);
+        Thread.sleep(1000);
      }
 
 }
